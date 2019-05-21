@@ -1,9 +1,35 @@
-<div>Private page</div>
-{{#if user}}
-  <div>
-    <h1>Who's the best developer?</h1>
-    <h1>You are, <span style="color: red;">{{ user.username}}</span>. You are! </h1>
-    <img src="http://media.giphy.com/media/UsK5GqD3e0huU/giphy.gif" alt="You rock.">
-    <a href="/">Index</a>
-  </div>
+<div>Bienvenido{{user.username}}</div>
+{{#if boss}}
+<form action="/signup" method="post">
+  <label for="username">Usuario:</label>
+  <input type="text" name="username"><br>
+
+  <label for="password">Contraseña:</label>
+  <input type="password" name="password"><br>
+
+  <label for="rol">Rol:</label>
+  <input type="password" name="rol"><br>
+
+
+  <button type="submit">registrar</button>
+
+
+</form>
+<a href="/delete">Borrar usuario</a>
+
+<a href="/">Inicio</a>
+
+
+
+
+{{/if}}
+
+{{#if ta}}
+<h1>hola TA</h1>
+<h1>{{user.username}}</h1>
+<span>username: {{user.username}}</span>
+<p>password: {{ user.password}}</p>
+<a href="/edit">editar</a>
+<a href="/">volver</a>
+
 {{/if}}
